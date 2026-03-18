@@ -21,8 +21,8 @@ final class TopologicalMap
      *
      * @var array[]
      */
-    private array $packages)
-    {
+        private array $packages
+    ) {
         $this->dependencies = $this->buildDependencies($this->packages);
     }
 

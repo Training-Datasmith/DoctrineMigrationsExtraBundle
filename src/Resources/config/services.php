@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 use Doctrine\DBAL\Connection;
 use Doctrine\Migrations\Version\DbalMigrationFactory;
-use Psr\Log\LoggerInterface;
 use SyliusLabs\DoctrineMigrationsExtraBundle\Comparator\TopologicalVersionComparator;
 use SyliusLabs\DoctrineMigrationsExtraBundle\Factory\ContainerAwareVersionFactory;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symfony\Component\DependencyInjection\Reference;
 
 use function Symfony\Component\DependencyInjection\Loader\Configurator\inline_service;
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;

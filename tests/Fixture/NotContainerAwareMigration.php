@@ -6,7 +6,6 @@ namespace Tests\SyliusLabs\DoctrineMigrationsExtraBundle\Fixture;
 
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\Migrations\AbstractMigration;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 final class NotContainerAwareMigration extends AbstractMigration
