@@ -9,25 +9,20 @@ use MJS\TopSort\Implementations\ArraySort;
 final class TopologicalMap
 {
     /**
-     * @psalm-var array<string, list<string>>
-     *
-     * @var array[]
-     */
-    private $packages;
-
-    /**
      * @psalm-var array<string, int>
-     *
-     * @var array
      */
-    private $dependencies;
+    private array $dependencies;
 
     /**
      * @psalm-param array<string, list<string>> $packages
      */
-    public function __construct(array $packages)
+    public function __construct(/**
+     * @psalm-var array<string, list<string>>
+     *
+     * @var array[]
+     */
+    private array $packages)
     {
-        $this->packages = $packages;
         $this->dependencies = $this->buildDependencies($this->packages);
     }
 

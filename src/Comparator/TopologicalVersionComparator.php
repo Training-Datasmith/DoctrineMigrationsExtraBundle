@@ -13,8 +13,7 @@ final class TopologicalVersionComparator implements Comparator
     /** @var Comparator */
     private $defaultSorter;
 
-    /** @var TopologicalMap */
-    private $map;
+    private readonly \SyliusLabs\DoctrineMigrationsExtraBundle\Comparator\TopologicalMap $map;
 
     /**
      * @psalm-param array<string, list<string>> $packages
