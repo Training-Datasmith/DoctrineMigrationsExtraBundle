@@ -31,12 +31,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SyliusLabs\\DoctrineMigrationsExtraBundle\\": "src/"
+            "Sylius_Labs\\Doctrine_Migrations_Extra_Bundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\SyliusLabs\\DoctrineMigrationsExtraBundle\\": "tests/"
+            "Tests\\Sylius_Labs\\Doctrine_Migrations_Extra_Bundle\\": "tests/"
         }
     }
 }
