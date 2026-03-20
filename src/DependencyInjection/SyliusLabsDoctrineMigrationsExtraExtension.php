@@ -1,37 +1,32 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types=1);
+namespace Sylius_Labs\Doctrine_Migrations_Extra_Bundle\Dependency_Injection;
 
-namespace SyliusLabs\DoctrineMigrationsExtraBundle\DependencyInjection;
-
-use SyliusLabs\DoctrineMigrationsExtraBundle\Comparator\TopologicalVersionComparator;
-use Symfony\Component\Config\Definition\ConfigurationInterface;
-use Symfony\Component\Config\FileLocator;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symfony\Component\DependencyInjection\Loader\PhpFileLoader;
-
-final class SyliusLabsDoctrineMigrationsExtraExtension extends Extension
+use Sylius_Labs\Doctrine_Migrations_Extra_Bundle\Comparator\Topological_Version_Comparator;
+use Symfony\Component\Config\Definition\Configuration_Interface;
+use Symfony\Component\Config\File_Locator;
+use Symfony\Component\Dependency_Injection\Container_Builder;
+use Symfony\Component\Dependency_Injection\Extension\Extension;
+use Symfony\Component\Dependency_Injection\Loader\Php_File_Loader;
+final class Sylius_Labs_Doctrine_Migrations_Extra_Extension extends Extension
 {
     /**
      * @param array<string, mixed> $configs
      *
      * @throws \Exception
      */
-    public function load(array $configs, ContainerBuilder $container): void
+    public function load(array $configs, Container_Builder $container): void
     {
-        $config = $this->processConfiguration($this->getConfiguration([], $container), $configs);
-        $loader = new PhpFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-
+        $config = $this->process_configuration($this->get_configuration([], $container), $configs);
+        $loader = new Php_File_Loader($container, new File_Locator(__DIR__ . '/../Resources/config'));
         $loader->load('services.php');
-
-        $container->getDefinition(TopologicalVersionComparator::class)->setArgument(0, $config['migrations']);
+        $container->get_definition(Topological_Version_Comparator::class)->set_argument(0, $config['migrations']);
     }
-
     /**
      * @param array<string, mixed> $config
      */
-    public function getConfiguration(array $config, ContainerBuilder $container): ConfigurationInterface
+    public function get_configuration(array $config, Container_Builder $container): Configuration_Interface
     {
         return new Configuration();
     }
